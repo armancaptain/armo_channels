@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat Rooms</title>
+    <link rel="icon" type="image/png" href="/media/WhatsApp Image 2021-06-14 at 13.12.07.jpeg">
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+	<link rel="stylesheet" 
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	</script>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/jquery.js.min.js"></script>
+	<link rel="stylesheet" href="./style/style.css">
+</head>
+<body style="background-color: #f1f1f1;">
+    <nav class="navbar navbar-default vn-navbar">
+        <div class="container-feuled">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target="#MyNavbar" style="width: 43px;">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand" style="font-family: cursive; font-size: 25px ;margin-left: 170px; color: rgb(0, 138, 218);">armo_channels</a>
+            </div>
+            <div id="MyNavbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav vn-navbar" style="font-size: 20px;">
+                </ul>
+                
+                <ul class="nav navbar-nav navbar-right" style="font-size: 20px; margin-right: 170px;">
+                    <li><a href="http://localhost:8000/"><span class="glyphicon glyphicon-home"></span></a></li>
+                    <li><a href="http://localhost:8000/chat/index/"><span class="glyphicon glyphicon-send" style="color: rgb(0, 78, 167);"></span></a></li>
+                    <li><a href="http://localhost:8000/plus/"><span class="glyphicon glyphicon-plus-sign"></span></a></li>
+                    <li><a href="http://localhost:8000/explore/"><span class="glyphicon glyphicon-search"></span></a></li>
+                    <li><a href="http://localhost:8000/"><span class="glyphicon glyphicon-heart-empty"></span></a></li>
+                    <li><a href="http://localhost:8000/"><span class="glyphicon glyphicon-user"></span></a></li>    
+                </ul>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+        
+        
+    </div>
+    <div class="container" style="background-color: #f1f1f1; margin-left: 30%;">
+        <div style="background-color: white; width: 40%; border-style: ridge; border-color: #f1f1f1; padding-top: 10px;" >
+            <input id="room-name-input" type="text" size="100" style="width: 70%; margin-left: 3%;" title="What chat room would you like to enter?"><br>
+            <input id="room-name-submit" type="button" value="Enter" style="margin-left: 80%; margin-top: -8%;">
+            
+            <script>
+                document.querySelector('#room-name-input').focus();
+                document.querySelector('#room-name-input').onkeyup = function(e) {
+                    if (e.keyCode === 13) {  // enter, return
+                        document.querySelector('#room-name-submit').click();
+                    }
+                };
+            
+                document.querySelector('#room-name-submit').onclick = function(e) {
+                    var roomName = document.querySelector('#room-name-input').value;
+                    window.location.pathname = '/chat/' + roomName + '/';
+                };
+            </script>
+        </div>
+        <div style="background-color: white; align-items: center; width: 40%; height: 470px; margin-top: -0.25%; border-style: ridge; border-color: #f1f1f1;">
+            <h2 style="color: rgb(0, 78, 167); margin-left: 42%;">chats</h2>
+            {% for chat_room in chat_rooms %}
+            
+            <hr style="height: 0.6px; width: 100%; color: rgb(219, 218, 218);" class="container-feuled">
+            <a href="http://localhost:8000/chat/{{ chat_room.roomname }}" style="color: rgb(0, 0, 0); margin-left: 10%; font-size: 17px;">{{chat_room.roomname}}</a>
+        
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

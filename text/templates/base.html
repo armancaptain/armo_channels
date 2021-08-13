@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <title>
+    {%block title%}
+  text
+    {%endblock%}
+    </title>
+    <link rel="icon" type="image/png" href="/media/WhatsApp Image 2021-06-14 at 13.12.07.jpeg">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+  </head>
+  <body style="margin-left: 30%;">
+  <header>
+    <h2><a href="{% url 'list' %}">LOGO</a></h2>
+    <nav>
+      <ul>
+        {% if user.is_authenticated %}
+        <li>
+          <a class="highlight" href="{% url 'text:create' %}">create new article</a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+    <div class="wrapper">
+
+    {% block content %}
+
+    {%endblock%}
+
+      </div>
+  </body>
+</html>

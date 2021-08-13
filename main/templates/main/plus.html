@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>armo_channels</title>
+		<link rel="icon" type="image/png" href="/media/WhatsApp Image 2021-06-14 at 13.12.07.jpeg">
+		<meta name="viewport" content="width=device-width, intial-scale=1">
+		<link rel="stylesheet" 
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+		</script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+		</script>
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/jquery.js.min.js"></script>
+		<link rel="stylesheet" href="./style/style.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-default vn-navbar">
+			<div class="container-feuled">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#MyNavbar" style="width: 43px;">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand" style="font-family: cursive; font-size: 25px ;margin-left: 170px; color: rgb(0, 138, 218);">armo_channels</a>
+				</div>
+				<div id="MyNavbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav vn-navbar" style="font-size: 20px;">
+					</ul>
+					
+					<ul class="nav navbar-nav navbar-right" style="font-size: 20px; margin-right: 170px;">
+						<li><a href="http://localhost:8000/"><span class="glyphicon glyphicon-home"></span></a></li>
+                        <li><a href="http://localhost:8000/chat/index/"><span class="glyphicon glyphicon-send"></span></a></li>
+                        <li><a href="http://localhost:8000/plus"><span class="glyphicon glyphicon-plus-sign" style=" color: rgb(0, 78, 167);"></span></a></li>
+						<li><a href="http://localhost:8000/explore"><span class="glyphicon glyphicon-search"></span></a></li>
+                        <li><a href="http://localhost:8000/"><span class="glyphicon glyphicon-heart-empty"></span></a></li>
+                        <li><a href="http://localhost:8000/"><span class="glyphicon glyphicon-user"></span></a></li>    
+					</ul>
+					</ul>
+				</div>
+			</div>
+		</nav>
+<div class = "video-wrap">
+<video id = "video" playsinline autoplay></video>
+</div>
+<div class = "controller">
+<button id = "snap">Capture</button>
+</div>
+<canvas id = "canvas" width = "640" height = "480" method='POST'>
+</canvas>
+<script>
+'use strict';
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const snap = document.getElementById('snap');
+const errorMsgElement = document.getElementById('span#ErrorMsg');
+const constraints = {
+audio:true,
+video:{
+width:1280,height:720
+}};
+async function init()
+{
+try
+{
+const stream = await navigator.mediaDevices.getUserMedia(constraints);
+handleSuccess(stream);
+}
+catch(e)
+{
+errorMsgElement.innerHTML
+=`navigator.getUserMedia.error:${e.toString()}`;
+}
+}
+function handleSuccess(stream)
+{
+window.stream = stream;
+video.srcObject = stream;
+}
+init();
+var context = canvas.getContext('2d');
+snap.addEventListener("click",function(){
+context.drawImage(video, 0, 0, 640, 480);});
+</script>
+    </body>
+</html>    

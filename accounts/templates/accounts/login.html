@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>armo_channels</title>
+		<link rel="icon" type="image/png" href="/media/WhatsApp Image 2021-06-14 at 13.12.07.jpeg">
+		<meta name="viewport" content="width=device-width, intial-scale=1">
+		<link rel="stylesheet" 
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+		</script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+		</script>
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/jquery.js.min.js"></script>
+		<link rel="stylesheet" href="./style/style.css">
+	</head>
+	<body style="background: radial-gradient(#00b2ff, rgb(1, 32, 90)); margin-left: 26%;" class="col-xs-7">
+		<img src="/media/Untitled-1.gif" alt="armo" style="width: 250px; margin-left: 170px; margin-left: 20%;">
+		<div style="background-color: white; width: 110%; height: 80%; border-radius: 10px; margin-left: -10%;">
+			<img src="/media/login.svg" alt="login" style="width: 80%; height: 80%; margin-left: -5%;">
+      <div style="margin-top: -50%; margin-left: 50%; width: 50%; height: 40%;">
+				<h1 style="margin-left: 40%;">login</h1>
+				<form class="site-form" action="" method="post" style="margin-left: 15%; margin-top: 50px; height: 40%;">
+					{% csrf_token %}
+          			{{form.as_p}}
+          <button type="submit" style="border-radius: 20px; width: 100px; height: 40px; margin-top: 41%;">Login</button>
+        </form>
+        <button style="border-radius: 20px; margin-left: 15%; width: 100px; height: 40px; margin-left: 170px; margin-top: 30%;"><a href="http://localhost:8000/singup">singup</a></button>
+      </div>
+		</div>	
+	</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="article-detail">
+  <div class="article">
+    <h1>{{article.title}}</h1>
+    <p>{{article.body}}</p>
+    <p>{{article.date}}</p>
+    <img src="{{article.image_or_video.url}}" alt="">
+    <video src="{{article.image_or_video.url}}"></video>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,154 @@
+<html>
+{% load static %}
+{% block content %}
+<head>
+  <meta charset="utf-8">
+  <title>armo_channels</title>
+  <link rel="icon" type="image/png" href="/media/WhatsApp Image 2021-06-14 at 13.12.07.jpeg">
+  <meta name="viewport" content="width=device-width, intial-scale=1">
+  <link rel="stylesheet" 
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+  </script>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/jquery.js.min.js"></script>
+  <link rel="stylesheet" href="./style/style.css">
+    <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+</head>
+<body style="background-color: rgb(0, 104, 145); background: radial-gradient(rgb(0, 0, 0),#001368);">
+  <div class="create-article" style="margin-left: 25%;color: white;">
+    <div>
+    <img src="/media/Untitled-1.gif" alt="armo" style="width: 250px;">
+  </div>
+    <div style="margin-top: -35px;">
+  <h1>
+      create your text post!
+    </h1>
+    <form class="site-form" action="{% url 'text:create' %}" method="post" enctype="multipart/form-data" style="width: 17%; ">
+      {{form}}
+      {% csrf_token %}
+      <button type="submit" value="create" style="border-radius: 4px; margin-top: 10px;">submit 			<span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      </div>
+    <style>
+      body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #031321;
+  }
+  
+  button {
+      position: relative;
+      display: inline-block;
+      padding: 15px 30px;
+      color: #33e49a;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-decoration: none;
+      font-size: 24px;
+    width: 200px;
+    background-color: Transparent;
+      background-repeat:no-repeat;
+      border: none;
+      cursor:pointer;       
+      overflow: hidden;
+      transition: 0.2s;
+  }
+  
+  
+  
+  button:hover {
+      color: #255784;
+      background: #33e49a;
+      box-shadow: 0 0 10px #33e49a, 0 0 40px #33e49a, 0 0 80px #33e49a;
+      transition-delay: 1s;
+  }
+  
+  
+  button span {
+      position: absolute;
+      display: block;
+  }
+  
+  
+  
+  
+  button span:nth-child(1) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #33e49a);
+  }
+  
+  
+  
+  button:hover span:nth-child(1) {
+      left: 100%;
+      transition: 1s;
+  }
+  
+  
+  button span:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg, transparent, #33e49a);
+  }
+  
+  button:hover span:nth-child(3) {
+      right: 100%;
+      transition: 1s;
+      transition-delay: 0.5s;
+  }
+  
+  
+  
+  button span:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, #33e49a);
+  }
+  
+  button:hover span:nth-child(2) {
+      top: 100%;
+      transition: 1s;
+      transition-delay: 0.25s;
+  }
+  
+  
+  
+  button span:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, #33e49a);
+  }
+  
+  button:hover span:nth-child(4) {
+      bottom: 100%;
+      transition: 1s;
+      transition-delay: 0.75s;
+  }
+  
+    </style>
+</body>
+
+{%endblock%}
+</html>

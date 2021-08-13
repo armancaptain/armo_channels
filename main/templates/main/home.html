@@ -1,0 +1,66 @@
+<!doctype html>
+{% block content %}
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>armo_channels</title>
+		<link rel="icon" type="image/png" href="/media/WhatsApp Image 2021-06-14 at 13.12.07.jpeg">
+		<meta name="viewport" content="width=device-width, intial-scale=1">
+		<link rel="stylesheet" 
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+		</script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+		</script>
+		<link rel="stylesheet" href="./css/bootstrap.min.css">
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/jquery.js.min.js"></script>
+		<link rel="stylesheet" href="./style/style.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-default vn-navbar">
+			<div class="container-feuled">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#MyNavbar" style="width: 43px;">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand" style="font-family: cursive; font-size: 25px ;margin-left: 10px; color: rgb(0, 138, 218);">armo_chnnels</a>
+				</div>
+				<div id="MyNavbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav vn-navbar" style="font-size: 20px;">
+					</ul>
+					
+					<ul class="nav navbar-nav navbar-right" style="font-size: 20px; margin-right: 170px;">
+						<li><a href="http://localhost:8000/"><span class="glyphicon glyphicon-home"></span></a></li>
+                        <li><a href="http://localhost:8000/chat/index/"><span class="glyphicon glyphicon-send"></span></a></li>
+                        <li><a href="http://localhost:8000/plus/"><span class="glyphicon glyphicon-plus-sign" style="color: gray;"></span></a></li>
+						<li><a href="http://localhost:8000/explore/"><span class="glyphicon glyphicon-search"></span></a></li>
+                        <li><a href="http://localhost:8000/"><span class="glyphicon glyphicon-heart-empty"></span></a></li>
+                        <li><a href="http://localhost:8000/"><span class="glyphicon glyphicon-user" style="color: rgb(0, 78, 167);"></span></a></li>    
+					</ul>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container">	
+			<div class="M-jxE">
+				<img alt="Add a profile photo" class="img-rounded" enctype="multipart/form-data" method="POST" title="Add a profile photo" role="presentation" src="/media/2.jpg" style="width: 20%; height: 20%; margin-top: 50px;">				<button type="button" class="btn btn-info" style="font-family: monospace; margin-top: -20px; margin-left: 30px;"><a href="http://localhost:8000/editprofile" style="color: white;">edit profile</a> </button>
+				<a href=""><span class="glyphicon glyphicon-cog" style="font-size: 35px; margin-left: 20px; color: rgb(0, 0, 0);"></span></a>
+			</div>
+			<div>
+				<strong style="font-size: 25px ; margin-left: 50px;">@ {{user}}</strong>				 				
+			</div>
+			<hr color="#f1f1f1" style="height: 1px; width: 80%;" class="container-feuled" >
+			<a href="http://localhost:8000/posts/"><span class="glyphicon glyphicon-th" style=" margin-left: 35%; font-size: 20px; color: gray;"></span></a>
+			<a href="http://localhost:8000/armo_tv/"><span class="glyphicon glyphicon-film" style=" margin-left: 3%; font-size: 20px; color: gray;"></span></a>
+			<a href="http://localhost:8000/text/"><span class="glyphicon glyphicon-envelope" style=" margin-left: 3%; font-size: 20px; color: gray;"></span></a>
+			<a href="http://localhost:8000/"><span class="glyphicon glyphicon-save" style=" margin-left: 3%; font-size: 20px; color: gray;"></span></a>
+			<a href="http://localhost:8000/"><span class="glyphicon glyphicon-paperclip" style=" margin-left: 3%; font-size: 20px; color: gray;"></span></a>
+		</div>
+		</div>
+    </body>
+</html>
+{% endblock %}
